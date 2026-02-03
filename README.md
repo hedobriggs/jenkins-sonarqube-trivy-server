@@ -3,8 +3,11 @@
 
 In this project we would be deploying Netflix Clone application using Terraform, Jenkins (CI/CD) pipeline, Dockerto implement an end-to-end DevSecOps  deployed on AWS,  Security tools like like SonarQube, OWASP Dependency Check and Trivy would be used. 
 
+
 **Step 1: Launch an EC2 Instance and install Jenkins, SonarQube, Docker and Trivy**
 We would be making use of Terraform to launch the EC2 instance. We would be adding a script as userdata for the installation of Jenkins, SonarQube, Trivy and Docker.
+
+
 
 **Step 2: Access Jenkins at port 8080 and install required plugins**
 Install the following plugins:
@@ -20,6 +23,8 @@ Docker API
 docker-build-step
 Blue Ocean
 
+
+
 **Step 3: Set up SonarQube**
 For the SonarQube Configuration, first access the Sonarqube Dashboard using the url http://elastic_ip:9000
 
@@ -31,13 +36,19 @@ Go to Manage Jenkins -> System -> SonarQube installation Add URL of SonarQube an
 
 Go to Manage Jenkins -> Tools -> SonarQube Scanner Installations -> Install automatically.
 
+
+
 **Step 4: Set up OWASP Dependency Check**
 Go to Manage Jenkins -> Tools -> Dependency-Check Installations -> Install automatically
+
+
 
 **Step 5: Set up Docker for Jenkins**
 Go to Manage Jenkins -> Tools -> Docker Installations -> Install automatically
 
 And then go to Manage Jenkins -> Credentials -> System -> Global Credentials -> Add credentials. Add username and password for the docker registry (You need to create an account on Dockerhub).
+
+
 
 **Step 6: Create a pipeline in order to build and push the dockerized image securely using multiple security tools**
 Go to Dashboard -> New Item -> Pipeline
